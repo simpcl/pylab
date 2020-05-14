@@ -1,6 +1,6 @@
 
 TARGET=tfs.so
-OBJS=tfs.o crc32.o
+OBJS=tfs.o crc32.o fsname.o
 CC=gcc
 PYTHON_INC=/opt/python-2.7.18/include/python2.7/
 #CFLAGS=-fpic -c -I $(PYTHON_INC)
