@@ -78,15 +78,15 @@ def CreateTree():
 
 if __name__ == '__main__':
     tree = CreateTree()
-    print('--------')
+    print('--------BFP')
     tree.BFT()
-    print('--------')
+    print('--------PreOrderDFT')
     tree.PreOrderDFT()
     tree.PreOrderDFTWithStack()
-    print('--------')
+    print('--------InOrderDFT')
     tree.InOrderDFT()
     tree.InOrderDFTWithStack()
-    print('--------')
+    print('--------AfterOrderDFT')
     tree.AfterOrderDFT()
     tree.AfterOrderDFTWithStack()
 
