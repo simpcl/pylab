@@ -19,10 +19,12 @@ def is_loop(head):
             print("loop exists because of p1==p2, index=%d" % index)
             return True
 
+    print("loop does not exist")
     return False
 
 if __name__ == '__main__':
     ll = CreateLinkList(8)
+    is_loop(ll.head)
 
     tail = ll.tail()
     node = ll.step(4)
