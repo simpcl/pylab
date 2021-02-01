@@ -1,4 +1,7 @@
-#!/usr/bin/python
+#!/usr/bin/python3
+
+def print_data(data):
+    print(data, end=',')
 
 class Node:
     def __init__(self, data):
@@ -11,6 +14,22 @@ class LinkList:
             self.head = node
         else:
             self.head = Node()
+
+    def tail(self):
+        nn = self.head
+        while nn.next is not None:
+            nn = nn.next
+        return nn
+
+    def step(self, num):
+        nn = self.head
+        i = 0
+        while nn is not None:
+            nn = nn.next
+            i += 1
+            if i >= num:
+                return nn
+        return None
 
     def prepend(self, node):
         if not node.next:
@@ -29,17 +48,18 @@ class LinkList:
             callback(nn.data)
             nn = nn.next
 
-    def reverse(self):
-        head = None
-        while self.head:
-            node = self.head
-            self.head = self.head.next
-            node.next = head
-            head = node
-        self.head = head
+    def show(self):
+        self.apply_for_all(print_data)
+        print('')
 
-def print_data(data):
-    print(data)
+def CreateLinkList(num):
+    ll = LinkList(Node(0))
+    node = ll.head
+    for i in range(1, num): 
+        node.next = Node(i)
+        node = node.next
+    return ll
+
 
 if __name__ == '__main__':
     ll = LinkList(Node(1))
@@ -47,6 +67,4 @@ if __name__ == '__main__':
     ll.append(Node(2))
     for i in range(8):
         ll.append(Node(i+3))
-    ll.apply_for_all(print_data)
-    ll.reverse()
-    ll.apply_for_all(print_data)
+    ll.show()
