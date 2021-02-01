@@ -1,7 +1,10 @@
 #!/usr/bin/python3
 
-def print_data(data):
-    print(data, end=',')
+def print_data(node):
+    print(node.data, end=',')
+
+def print_node(node):
+    print(node, end=',')
 
 class Node:
     def __init__(self, data):
@@ -14,6 +17,9 @@ class LinkList:
             self.head = node
         else:
             self.head = Node()
+
+    def head(self):
+        return self.head
 
     def tail(self):
         nn = self.head
@@ -45,12 +51,16 @@ class LinkList:
     def apply_for_all(self, callback):
         nn = self.head
         while nn:
-            callback(nn.data)
+            callback(nn)
             nn = nn.next
 
     def show(self):
         self.apply_for_all(print_data)
-        print('')
+        print('$')
+
+    def show_node(self):
+        self.apply_for_all(print_node)
+        print('$')
 
 def CreateLinkList(num):
     ll = LinkList(Node(0))
@@ -60,7 +70,6 @@ def CreateLinkList(num):
         node = node.next
     return ll
 
-
 if __name__ == '__main__':
     ll = LinkList(Node(1))
     ll.prepend(Node(0))
@@ -68,3 +77,4 @@ if __name__ == '__main__':
     for i in range(8):
         ll.append(Node(i+3))
     ll.show()
+
