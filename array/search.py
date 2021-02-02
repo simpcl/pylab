@@ -17,6 +17,9 @@ def binary_search(ary, num):
             end = mid
     return -1
 
+def rotate_array_binary_search(ary, num):
+    return -1
+
 if __name__ == '__main__':
     found = 0
     ary = [1,2,4,6,8,10,24,25,36,48]
