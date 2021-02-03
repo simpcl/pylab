@@ -60,14 +60,16 @@ if __name__ == '__main__':
         #print("index of {index}: {result}".format(index=i, result=res))
     print("len: %d, found: %d" % (len(ary), found))
 
+    #ary = [1,2,4,6,8,10,24,25,36,48]
+    ary = [1,1,8,8,8,10,24,36,36]
     # binary search in rotated sort array testcase
     for count in range(1, len(ary) - 1):
         print(rotate_array(ary, count))
-        fount = 0
-        for i in range(50):
+        found = 0
+        for i in range(38):
             res = rotated_sort_array_binary_search(ary, i)
             if res > -1:
-                fount += 1
+                found += 1
+                #print("rotated_sort_array_binary_search: %d" % (res))
         print("%d, len: %d, found: %d" % (count, len(ary), found))
-
 
